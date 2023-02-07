@@ -1,0 +1,40 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  
+}
+.main-bar{
+  display: flex;
+  justify-content: space-between;
+  padding: 16px;  
+  font-size: 20px;
+}
+.logo{
+  color: black;
+}
+.menu-bars{
+  margin: 12px;
+}
+.menu-bars a{
+  align-items: center;
+  text-decoration: none;
+  margin: 12px;
+  color: black;
+}
+.menu-bars a:hover{
+  color: black;
+  font-weight: bold;
+}
+.end-bars{
+  margin: 12px;
+}
+.end-bars a{
+  text-decoration: none;
+  margin: 12px;
+  color: black;
+}
+.end-bars a:hover{
+  color: black;
+  font-weight: bold;
+}
