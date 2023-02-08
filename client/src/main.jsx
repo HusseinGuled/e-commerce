@@ -4,10 +4,12 @@ import App from './App'
 import './index.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {BrowserRouter} from 'react-router-dom'
+import { Toaster } from 'react-hot-toast';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <BrowserRouter>
+    <Toaster/>
     <App />
     </BrowserRouter>
   </React.StrictMode>,

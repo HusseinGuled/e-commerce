@@ -2,7 +2,7 @@ import axios from 'axios'
 import React, { useState, useEffect } from 'react'
 import Product from './Product'
 
-function Products({counter, setCounter}) {
+function Products({ handleClick}) {
   const [products, setProducts]=useState([])
 
    const kab='C:\Users\hp\Desktop\images\apple.jpg'
@@ -19,7 +19,7 @@ function Products({counter, setCounter}) {
 
 {
   products.map((product, index)=>(
-   <Product product={product} key={index} counter={counter} setCounter={setCounter}/>
+   <Product product={product} key={index} handleClick={handleClick}/>
   ))
 }
 </div>

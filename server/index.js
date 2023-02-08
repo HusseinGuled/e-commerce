@@ -2,15 +2,14 @@ import express from "express"
 import mongoose from "mongoose"
 import router from "./routes/routes.js"
 import cors from 'cors'
-import products from "./models/product.js"
-import multer from "multer"
-import fs from 'fs'
+import dotenv from 'dotenv'
+
 
 const app=express()
 
  app.use(cors())
  app.use(express.json())
-
+ dotenv.config()
  mongoose.set({strictQuery:true})
  const url='mongodb://localhost:27017/e_commerce'
  mongoose.connect(url, function(err){

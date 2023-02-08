@@ -38,3 +38,25 @@
   color: black;
   font-weight: bold;
 }
+.spaing{
+  position: absolute;
+  /* bottom: 2px; */
+  margin-left: 28px;
+  margin-bottom: 20px;
+  background-color: blue;
+  color: white;
+  font-size: 10px;
+  border-radius: 50%;
+  padding: 0 4px;
+}
+
+/* .icon{
+  margin-top: 10px;
+}
+
+.login a{
+  text-decoration: none;
+  margin-right: 20px;
+  color: black;
+  right: 20%;
+} */

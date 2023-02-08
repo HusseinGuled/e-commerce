@@ -1,26 +1,26 @@
 import React from 'react'
-
-function Product({product , counter , setCounter}) {
+import '../styles/product.css'
+function Product({product , handleClick}) {
 
   const im='D:\NodejsProjects\e-commerce\images\apple.jpg'
   return (
-<div className='col-3 my-2'>
-      <div className="card" style={{ width: '20rem' , height: '20rem'}}>
+<div className='col-3 my-2 '>
+      <div className="card" style={{ width: '18rem' , height: '18rem'}}>
         <div className="card-title"></div>
         <div className="card-body">
         <img 
         style={{ objectFit: "fill" }}
-					height={180}
-					width={250} 
+					height={130}
+					width={180} 
           src={product.image} alt=""/>
 
         </div>
        <div className="container d-flex justify-content-around">
-       <span>{product.itemName}</span>
-       <span>${product.price}</span>
+       <h6>{product.itemName}</h6>
+       <h6>${product.price}</h6>
        </div>
         <div className="container  ml-4 my-2">
-        <button className='btn btn-primary' onClick={setCounter(counter+1)}>Add to Carts</button>
+        <button className=' add-btn' onClick={()=>handleClick(product)}>Add Carts</button>
         </div>
       </div>
     </div>

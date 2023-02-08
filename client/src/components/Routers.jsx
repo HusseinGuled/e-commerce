@@ -3,27 +3,52 @@ import '../styles/header.css'
 import { Route ,Routes } from 'react-router-dom'
 import Header from './header'
 import Carts from '../pages/Carts'
-import About from '../pages/About'
 import Contact from '../pages/Contact'
 import Login from '../pages/Login'
 import Products from '../pages/Products'
 import Home from '../pages/Home'
-import First from '../admins/First'
+
 function Routers() {
-  const[counter, setCounter]=useState(10)
+  const[data, setData]=useState([])
+
+  // console.log('first', data)
+  const [warning ,setWarning]=useState(false)
+
+  const handleClick=(items)=>{
+    // console.log(item)
+    let isPresent=false
+  data.forEach((item)=>{
+      if(item._id==items._id){
+        isPresent=true
+       return;
+      }
+    })
+     if(isPresent){
+      setWarning(true)
+      setTimeout(()=>{
+        setWarning(false) 
+      }, 2000)
+      return;
+     }
+     setData([...data, items])
+    //  console.log('data ', data)
+    //  console.log('itwm ', items)
+    }
+    
   return (
    <>
-   <Header counter={counter} setCounter={setCounter}/>
+   <Header size={data.length}/>
    <Routes>
     <Route path='/' element={<Home/>} />
-    <Route path='/products' element={<Products counter={counter} setCounter={setCounter}/>} />
+    <Route path='/products' element={<Products handleClick={handleClick}/>} />
     <Route path='/contact' element={<Contact/>} />
-    <Route path='/about' element={<About/>} />
-    <Route path='/carts' element={<Carts />} />
+    <Route path='/carts' element={<Carts data={data} setData={setData} />} />
     <Route path='/login' element={<Login/>} />
-    <Route path='/admin' element={<First/>} />
 
    </Routes>
+  {/* {
+   warning && toast.error('this item is already added to your carts')
+  } */}
    </>
   )
 }

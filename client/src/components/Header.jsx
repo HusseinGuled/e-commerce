@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
 import '../styles/header.css'
-import {AiOutlineShoppingCart} from 'react-icons/ai'
+import {BsCartPlus} from 'react-icons/bs'
 
 import { NavLink } from 'react-router-dom'
-function Header({counter , setCounter}) {
+function Header({size}) {
 
 
   return (
@@ -17,15 +17,14 @@ function Header({counter , setCounter}) {
     
          <NavLink to='/'> Home  </NavLink>
              <NavLink to='/products'> Products  </NavLink>
-             <NavLink to='/about'> About  </NavLink>
              <NavLink to='/contact'>  Contact  </NavLink>
-             <NavLink to='/admin'>  Admin  </NavLink>
          </div>
          <div className='end-bars'>
   <NavLink to='/carts'>
+    <span className='spaing'>{size}</span>
       <span>
-        {counter}
-             < AiOutlineShoppingCart className='fs-3'/>
+        <BsCartPlus className='fs-2'/>
+             {/* < AiOutlineShoppingCart className='fs-1'/> */}
       </span>
   </NavLink>
           
